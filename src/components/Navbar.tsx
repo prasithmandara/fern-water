@@ -31,37 +31,13 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Top Banner Notice */}
-      <div className="bg-[#020710] border-b border-white/5 py-1.5 px-4 text-xs text-slate-300 font-normal">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#00a3e0] animate-ping" />
-            <span className="hidden sm:inline text-[#00a3e0] font-semibold tracking-wide uppercase text-[10px]">
-              Bottled at Source:
-            </span>
-            <span>230-Foot Virgin Subterranean Spring • Kamburupitiya, Sri Lanka</span>
-          </div>
-          <div className="hidden md:flex items-center gap-6">
-            <span className="text-slate-400">
-              Hotline:{" "}
-              <a href="tel:+94715165165" className="text-sky-300 hover:text-white transition font-mono font-medium">
-                +94 715 165 165
-              </a>
-            </span>
-            <span className="text-[#e4007c] flex items-center gap-1 font-medium">
-              <Sparkles className="w-3 h-3" /> Since 1992
-            </span>
-          </div>
-        </div>
-      </div>
 
       {/* Main Header */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? "glass-nav py-3.5 shadow-[0_10px_35px_rgba(0,0,0,0.65)] border-[#00a3e0]/20"
-            : "bg-transparent py-5"
-        }`}
+        className={`sticky top-0 z-40 transition-all duration-300 ${isScrolled
+          ? "glass-nav py-3.5 shadow-[0_10px_35px_rgba(0,0,0,0.65)] border-[#00a3e0]/20"
+          : "bg-transparent py-5"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo */}

@@ -45,9 +45,8 @@ export const OrderDrawer: React.FC = () => {
     text += `*Ordered Items:*\n`;
 
     items.forEach((item, index) => {
-      text += `${index + 1}. ${item.product.name} (${item.product.volume}) x ${
-        item.quantity
-      } = LKR ${(item.product.priceLKR * item.quantity).toLocaleString()}\n`;
+      text += `${index + 1}. ${item.product.name} (${item.product.volume}) x ${item.quantity
+        } = LKR ${(item.product.priceLKR * item.quantity).toLocaleString()}\n`;
     });
 
     text += `\n*Total Estimated Amount: LKR ${totalAmountLKR.toLocaleString()}*\n`;

@@ -76,9 +76,8 @@ export const FaqSection: React.FC = () => {
                     {faq.question}
                   </span>
                   <div
-                    className={`p-2 rounded-full bg-white/5 text-[#00a3e0] transition-transform duration-300 ${
-                      isOpen ? "rotate-180 bg-[#00a3e0]/20 text-white" : ""
-                    }`}
+                    className={`p-2 rounded-full bg-white/5 text-[#00a3e0] transition-transform duration-300 ${isOpen ? "rotate-180 bg-[#00a3e0]/20 text-white" : ""
+                      }`}
                   >
                     <ChevronDown className="w-4 h-4" />
                   </div>

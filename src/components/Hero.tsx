@@ -105,19 +105,6 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="lg:col-span-6 text-center lg:text-left flex flex-col items-center lg:items-start"
         >
-          {/* Authentic Brand Origin Pill Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-pill mb-6 border-[#00a3e0]/30 text-sky-200 text-xs tracking-wider uppercase font-medium shadow-[0_0_25px_rgba(0,163,224,0.2)]"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#00a3e0] animate-ping" />
-            <Droplets className="w-3.5 h-3.5 text-[#00a3e0]" />
-            <span>230-Foot Virgin Spring • Narandeniya, Kamburupitiya</span>
-            <span className="hidden sm:inline text-[#e4007c] font-bold">|</span>
-            <span className="hidden sm:inline text-[#e4007c] font-semibold">Since 1992</span>
-          </motion.div>
 
           {/* Master Headline */}
           <h1 className="font-serif text-4xl sm:text-6xl xl:text-7xl font-normal tracking-tight text-white leading-[1.08] mb-6">
@@ -145,16 +132,6 @@ export const Hero: React.FC = () => {
               <span>Order Fresh Water</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
-
-            <a
-              href="#source"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full font-medium text-sm text-slate-200 glass-card-hover border border-white/15 hover:border-[#00a3e0]/50 hover:bg-white/5 transition-all duration-300 group"
-            >
-              <div className="w-7 h-7 rounded-full bg-[#00a3e0]/20 flex items-center justify-center group-hover:bg-[#00a3e0] group-hover:text-white transition-colors">
-                <Play className="w-3 h-3 fill-current ml-0.5 text-[#00a3e0] group-hover:text-white" />
-              </div>
-              <span>The 230ft Source</span>
-            </a>
           </div>
 
           {/* Direct Delivery Hotline Bar */}
@@ -266,21 +243,6 @@ export const Hero: React.FC = () => {
                   </motion.div>
                 </AnimatePresence>
 
-                {/* Floating Interactive Micro-Pills */}
-                <div className="absolute top-3 left-3 z-20">
-                  <span className="glass-pill px-3 py-1 rounded-full text-[11px] font-medium text-sky-200 border-[#00a3e0]/35 flex items-center gap-1.5 shadow-lg backdrop-blur-md">
-                    <Sparkles className="w-3 h-3 text-[#e4007c]" />
-                    <span>Bottled at Source</span>
-                  </span>
-                </div>
-
-                <div className="absolute top-3 right-3 z-20">
-                  <span className="glass-pill px-3 py-1 rounded-full text-[11px] font-medium text-slate-200 border-[#e4007c]/35 flex items-center gap-1.5 shadow-lg backdrop-blur-md">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#00a3e0]" />
-                    <span>Ministry of Health Registered</span>
-                  </span>
-                </div>
-
                 {/* Floating Bottom Card: Composition & Quick Add */}
                 <div className="absolute bottom-3 inset-x-3 glass-card p-3 rounded-xl border border-[#00a3e0]/30 flex items-center justify-between shadow-2xl z-20 backdrop-blur-xl">
                   <div className="flex items-center gap-3">
@@ -301,11 +263,10 @@ export const Hero: React.FC = () => {
 
                   <button
                     onClick={handleAddHeroProduct}
-                    className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center gap-1.5 shadow ${
-                      addedAnimation
-                        ? "bg-[#00a3e0] text-white shadow-[0_0_15px_rgba(0,163,224,0.6)]"
-                        : "bg-brand-gradient text-white hover:brightness-110 active:scale-95"
-                    }`}
+                    className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center gap-1.5 shadow ${addedAnimation
+                      ? "bg-[#00a3e0] text-white shadow-[0_0_15px_rgba(0,163,224,0.6)]"
+                      : "bg-brand-gradient text-white hover:brightness-110 active:scale-95"
+                      }`}
                   >
                     {addedAnimation ? (
                       <>
@@ -336,11 +297,10 @@ export const Hero: React.FC = () => {
                       <button
                         key={v.id}
                         onClick={() => setSelectedVariant(v)}
-                        className={`p-2 rounded-xl text-center transition-all duration-300 border ${
-                          isSelected
-                            ? "bg-gradient-to-b from-[#00a3e0]/25 to-[#e4007c]/15 border-[#00a3e0] text-white shadow-[0_0_15px_rgba(0,163,224,0.3)]"
-                            : "bg-white/5 border-white/10 text-slate-400 hover:border-[#00a3e0]/40 hover:text-white"
-                        }`}
+                        className={`p-2 rounded-xl text-center transition-all duration-300 border ${isSelected
+                          ? "bg-gradient-to-b from-[#00a3e0]/25 to-[#e4007c]/15 border-[#00a3e0] text-white shadow-[0_0_15px_rgba(0,163,224,0.3)]"
+                          : "bg-white/5 border-white/10 text-slate-400 hover:border-[#00a3e0]/40 hover:text-white"
+                          }`}
                       >
                         <div className="text-[11px] font-semibold truncate">{v.volume}</div>
                         <div className="text-[9px] text-slate-400 truncate">{v.price}</div>

@@ -127,11 +127,10 @@ export const SourceScrollytelling: React.FC = () => {
                 <button
                   key={layer.id}
                   onClick={() => setActiveLayer(layer.id)}
-                  className={`p-3 rounded-xl text-left transition-all duration-300 border ${
-                    activeLayer === layer.id
+                  className={`p-3 rounded-xl text-left transition-all duration-300 border ${activeLayer === layer.id
                       ? "bg-gradient-to-b from-[#00a3e0]/25 to-[#e4007c]/15 border-[#00a3e0] text-white shadow-[0_0_20px_rgba(0,163,224,0.3)]"
                       : "bg-white/5 border-white/10 text-slate-300 hover:border-[#00a3e0]/30 hover:bg-white/10"
-                  }`}
+                    }`}
                 >
                   <div className="text-[10px] uppercase font-bold tracking-wider text-[#00a3e0]">
                     {layer.depth}

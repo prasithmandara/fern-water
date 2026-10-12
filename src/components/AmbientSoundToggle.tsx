@@ -109,30 +109,4 @@ export const AmbientSoundToggle: React.FC = () => {
       }
     };
   }, []);
-
-  return (
-    <button
-      onClick={toggleSound}
-      title={isPlaying ? "Mute Virgin Spring Sound" : "Listen to Pristine Spring Stream"}
-      className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 border ${
-        isPlaying
-          ? "bg-[#00a3e0]/20 text-sky-200 border-[#00a3e0]/50 shadow-[0_0_15px_rgba(0,163,224,0.35)] animate-pulse"
-          : "bg-white/5 text-slate-300 border-white/10 hover:border-[#00a3e0]/40 hover:bg-white/10"
-      }`}
-    >
-      {isPlaying ? (
-        <>
-          <Volume2 className="w-3.5 h-3.5 text-[#00a3e0]" />
-          <span>Spring Stream Live</span>
-        </>
-      ) : (
-        <>
-          <VolumeX className="w-3.5 h-3.5 text-slate-400" />
-          <span className="flex items-center gap-1">
-            <Sparkles className="w-3 h-3 text-[#e4007c]" /> Sound of Spring
-          </span>
-        </>
-      )}
-    </button>
-  );
 };

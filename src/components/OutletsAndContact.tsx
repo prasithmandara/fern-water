@@ -82,19 +82,17 @@ export const OutletsAndContact: React.FC = () => {
                 <button
                   key={idx}
                   onClick={() => setSelectedOutlet(outlet)}
-                  className={`w-full p-4 sm:p-5 rounded-2xl text-left transition-all duration-300 border flex items-center justify-between ${
-                    isSelected
+                  className={`w-full p-4 sm:p-5 rounded-2xl text-left transition-all duration-300 border flex items-center justify-between ${isSelected
                       ? "bg-gradient-to-r from-[#00a3e0]/25 to-[#e4007c]/15 border-[#00a3e0] text-white shadow-[0_0_25px_rgba(0,163,224,0.25)]"
                       : "bg-white/5 border-white/10 text-slate-300 hover:border-[#00a3e0]/30 hover:bg-white/10"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-start gap-3.5">
                     <div
-                      className={`p-2.5 rounded-xl ${
-                        isSelected
+                      className={`p-2.5 rounded-xl ${isSelected
                           ? "bg-brand-gradient text-white"
                           : "bg-white/10 text-slate-300"
-                      }`}
+                        }`}
                     >
                       {outlet.isHeadquarters ? (
                         <Building className="w-4 h-4" />

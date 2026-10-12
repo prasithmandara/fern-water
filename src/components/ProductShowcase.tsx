@@ -67,11 +67,10 @@ export const ProductShowcase: React.FC = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase whitespace-nowrap transition-all duration-300 border ${
-                activeTab === tab.id
+              className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase whitespace-nowrap transition-all duration-300 border ${activeTab === tab.id
                   ? "bg-brand-gradient text-white border-white/20 shadow-[0_0_20px_rgba(0,163,224,0.35)]"
                   : "bg-white/5 text-slate-300 border-white/10 hover:border-[#00a3e0]/40 hover:bg-white/10"
-              }`}
+                }`}
             >
               {tab.label}
             </button>
@@ -183,11 +182,10 @@ export const ProductShowcase: React.FC = () => {
 
                       <button
                         onClick={() => handleQuickAdd(product)}
-                        className={`px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 text-white ${
-                          isAdded
+                        className={`px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 text-white ${isAdded
                             ? "bg-[#00a3e0] shadow-[0_0_20px_rgba(0,163,224,0.6)]"
                             : "bg-brand-gradient hover:brightness-110 hover:shadow-lg active:scale-95 border border-white/15"
-                        }`}
+                          }`}
                       >
                         {isAdded ? (
                           <>
