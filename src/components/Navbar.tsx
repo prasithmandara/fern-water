@@ -4,8 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
-import { AmbientSoundToggle } from "@/components/AmbientSoundToggle";
-import { ShoppingBag, Menu, X, PhoneCall, Sparkles, Droplets } from "lucide-react";
+import { ShoppingBag, Menu, X, PhoneCall, Droplets } from "lucide-react";
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -78,10 +77,6 @@ export const Navbar: React.FC = () => {
 
           {/* Right Action Icons & CTA */}
           <div className="flex items-center gap-3 sm:gap-4">
-            {/* Ambient Sound Controller */}
-            <div className="hidden sm:block">
-              <AmbientSoundToggle />
-            </div>
 
             {/* Cart Button */}
             <button
@@ -144,10 +139,6 @@ export const Navbar: React.FC = () => {
             >
               <X className="w-6 h-6" />
             </button>
-          </div>
-
-          <div className="py-4">
-            <AmbientSoundToggle />
           </div>
 
           <nav className="flex flex-col gap-4 my-auto">

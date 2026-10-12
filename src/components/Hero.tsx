@@ -1,84 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Droplets,
-  Sparkles,
-  Compass,
-  ShieldCheck,
   ArrowRight,
-  Play,
   PhoneCall,
-  Check,
-  Plus,
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { PRODUCTS } from "@/data/products";
-
-const HERO_VARIANTS = [
-  {
-    id: "splash",
-    title: "1.5L Active Splash",
-    volume: "1500ml",
-    image: "/assets/fern_water_bottle_with-water.png",
-    subtitle: "Endurance & Whole-Day Pure Hydration",
-    tag: "Signature Splash",
-    ph: "7.6",
-    price: "LKR 260",
-    isTransparentCutout: true,
-  },
-  {
-    id: "1000ml",
-    title: "1L Signature Bottle",
-    volume: "1000ml",
-    image: "/assets/fern_1000ml_water_bottle.jpeg",
-    subtitle: "Sri Lanka's Trusted Daily Balance",
-    tag: "Most Popular 1L",
-    ph: "7.6",
-    price: "LKR 200",
-    isTransparentCutout: false,
-  },
-  {
-    id: "500ml",
-    title: "500ml Everyday Vitality",
-    volume: "500ml",
-    image: "/assets/fern_500ml_bottled_water.jpeg",
-    subtitle: "Pocket & Commuter Spring Hydration",
-    tag: "On-The-Go",
-    ph: "7.6",
-    price: "LKR 120",
-    isTransparentCutout: false,
-  },
-  {
-    id: "glass",
-    title: "500ml Glass Dining Reserve",
-    volume: "500ml",
-    image: "/assets/fern_glass_dining.jpg",
-    subtitle: "Eco Fine Dining Heavyweight Glass",
-    tag: "Refillable Glass",
-    ph: "7.6",
-    price: "LKR 350",
-    isTransparentCutout: false,
-  },
-];
 
 export const Hero: React.FC = () => {
-  const { setIsDrawerOpen, addItem } = useCart();
-  const [selectedVariant, setSelectedVariant] = useState(HERO_VARIANTS[0]);
-  const [addedAnimation, setAddedAnimation] = useState(false);
-
-  const handleAddHeroProduct = () => {
-    const matched = PRODUCTS.find((p) => p.volume.includes(selectedVariant.volume.split(" ")[0]));
-    if (matched) {
-      addItem(matched);
-    } else {
-      addItem(PRODUCTS[0]);
-    }
-    setAddedAnimation(true);
-    setTimeout(() => setAddedAnimation(false), 1500);
-  };
+  const { setIsDrawerOpen } = useCart();
 
   return (
     <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden pt-8 pb-20 px-4 sm:px-6 lg:px-8">
@@ -185,141 +118,27 @@ export const Hero: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Right Column: Flawless Interactive Bottle Showcase */}
+        {/* Right Column: Clean Bottle PNG Visual (No frames or overlay boxes) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.92, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-6 relative flex flex-col items-center justify-center"
+          className="lg:col-span-6 relative flex items-center justify-center w-full"
         >
-          {/* Animated Water Ripples Radiating Around the Showcase */}
-          <div className="absolute w-[360px] sm:w-[500px] h-[360px] sm:h-[500px] rounded-full border border-[#00a3e0]/20 animate-ripple pointer-events-none" />
-          <div className="absolute w-[280px] sm:w-[400px] h-[280px] sm:h-[400px] rounded-full border border-[#e4007c]/25 animate-ripple [animation-delay:1.5s] pointer-events-none" />
+          {/* Subtle liquid depth glow behind the PNG image */}
+          <div className="absolute w-[360px] sm:w-[520px] h-[360px] sm:h-[520px] bg-gradient-to-tr from-[#00a3e0]/20 via-[#e4007c]/10 to-transparent rounded-full blur-[120px] pointer-events-none -z-10" />
 
-          {/* Central Bottle Container */}
-          <div className="relative z-10 w-full max-w-[480px]">
-            {/* Ambient Backlight Behind Bottle */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#00a3e0]/25 via-[#e4007c]/15 to-transparent blur-3xl rounded-3xl -z-10" />
-
-            {/* Showcase Main Glass Container */}
-            <div className="relative rounded-3xl overflow-hidden glass-card p-4 sm:p-6 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.85)] border border-[#00a3e0]/30">
-              {/* Product Visual Area */}
-              <div className="relative aspect-[4/3.4] w-full rounded-2xl overflow-hidden flex items-center justify-center bg-gradient-to-b from-sky-950/20 via-black/40 to-[#050b14]/90 border border-white/5">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={selectedVariant.id}
-                    initial={{ opacity: 0, scale: 0.92, y: 10 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.92, y: -10 }}
-                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative w-full h-full flex items-center justify-center p-2"
-                  >
-                    {selectedVariant.isTransparentCutout ? (
-                      /* Dynamic Cutout Bottle with Water Splash */
-                      <div className="relative w-full h-full flex items-center justify-center animate-float-slow">
-                        <Image
-                          src={selectedVariant.image}
-                          alt="Fern Bottled Water Active Splash"
-                          fill
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                          className="object-contain object-center drop-shadow-[0_20px_35px_rgba(0,163,224,0.4)]"
-                          priority
-                        />
-                      </div>
-                    ) : (
-                      /* Real Bottle Photographic Presentation */
-                      <div className="relative w-full h-full rounded-xl overflow-hidden">
-                        <Image
-                          src={selectedVariant.image}
-                          alt={selectedVariant.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                          className="object-cover object-center transform hover:scale-105 transition-transform duration-700"
-                          priority
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#050b14]/85 via-transparent to-black/20" />
-                      </div>
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-
-                {/* Floating Bottom Card: Composition & Quick Add */}
-                <div className="absolute bottom-3 inset-x-3 glass-card p-3 rounded-xl border border-[#00a3e0]/30 flex items-center justify-between shadow-2xl z-20 backdrop-blur-xl">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#00a3e0]/20 to-[#e4007c]/20 border border-[#00a3e0]/40 flex items-center justify-center text-sky-200 font-serif font-bold text-base">
-                      {selectedVariant.ph}
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-white tracking-wide">
-                        {selectedVariant.title}
-                      </div>
-                      <div className="text-[11px] text-sky-300 flex items-center gap-1">
-                        <span>{selectedVariant.price}</span>
-                        <span className="text-slate-400">•</span>
-                        <span className="text-slate-300">{selectedVariant.volume}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={handleAddHeroProduct}
-                    className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center gap-1.5 shadow ${addedAnimation
-                      ? "bg-[#00a3e0] text-white shadow-[0_0_15px_rgba(0,163,224,0.6)]"
-                      : "bg-brand-gradient text-white hover:brightness-110 active:scale-95"
-                      }`}
-                  >
-                    {addedAnimation ? (
-                      <>
-                        <Check className="w-3.5 h-3.5" />
-                        <span>Added!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Plus className="w-3.5 h-3.5" />
-                        <span>Add</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              {/* Interactive Variant Selector Strip */}
-              <div className="mt-4">
-                <div className="text-[10px] uppercase font-bold tracking-wider text-slate-400 mb-2 px-1 flex items-center justify-between">
-                  <span>Select Bottle Format:</span>
-                  <span className="text-[#00a3e0] font-mono">{selectedVariant.tag}</span>
-                </div>
-
-                <div className="grid grid-cols-4 gap-2">
-                  {HERO_VARIANTS.map((v) => {
-                    const isSelected = selectedVariant.id === v.id;
-                    return (
-                      <button
-                        key={v.id}
-                        onClick={() => setSelectedVariant(v)}
-                        className={`p-2 rounded-xl text-center transition-all duration-300 border ${isSelected
-                          ? "bg-gradient-to-b from-[#00a3e0]/25 to-[#e4007c]/15 border-[#00a3e0] text-white shadow-[0_0_15px_rgba(0,163,224,0.3)]"
-                          : "bg-white/5 border-white/10 text-slate-400 hover:border-[#00a3e0]/40 hover:text-white"
-                          }`}
-                      >
-                        <div className="text-[11px] font-semibold truncate">{v.volume}</div>
-                        <div className="text-[9px] text-slate-400 truncate">{v.price}</div>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Caption Banner */}
-              <div className="mt-3.5 flex items-center justify-between text-xs text-slate-300 px-1 border-t border-white/10 pt-3">
-                <span className="flex items-center gap-1.5 text-slate-400">
-                  <Compass className="w-3.5 h-3.5 text-[#00a3e0]" /> Kamburupitiya, Southern Province
-                </span>
-                <span className="text-[#00a3e0] font-medium text-[11px]">
-                  Zero Human Touch Before Capping
-                </span>
-              </div>
-            </div>
+          {/* Bottle PNG */}
+          <div className="relative w-full max-w-[560px] flex items-center justify-center animate-float-slow">
+            <Image
+              src="/assets/fern_water_bottle_with-water.png"
+              alt="Fern Bottled Drinking Water Pure Spring Splash"
+              width={800}
+              height={533}
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 560px"
+              className="w-full h-auto object-contain drop-shadow-[0_20px_45px_rgba(0,163,224,0.35)] select-none"
+            />
           </div>
         </motion.div>
       </div>

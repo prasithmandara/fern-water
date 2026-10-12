@@ -230,9 +230,18 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Rights */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>© 2026 Fern Bottled Water | Duallink International (Pvt) Ltd. All rights reserved.</p>
+        {/* Bottom Bar: Copyright, Developed By & Rights */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+            <p>© 2026 Fern Bottled Water | Duallink International (Pvt) Ltd. All rights reserved.</p>
+            <span className="hidden sm:inline text-slate-600">•</span>
+            <p className="text-slate-400">
+              Developed by{" "}
+              <span className="font-semibold text-white tracking-wide hover:text-[#00a3e0] transition-colors">
+                MLabs
+              </span>
+            </p>
+          </div>
           <div className="flex items-center gap-6 text-[11px]">
             <a href="#" className="hover:text-slate-300 transition">Privacy Sanctuary</a>
             <a href="#" className="hover:text-slate-300 transition">Terms of Purity</a>
