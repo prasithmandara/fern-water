@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fernbottledwater.com"),
   title: "Fern Bottled Water — Pure Nature in Every Drop | Sri Lanka's 230ft Virgin Spring",
   description:
-    "Experience pure organic luxury with Fern Natural Mineral Water. Drawn from a pristine 230-foot deep virgin spring in Sri Lanka's Miocene-era rainforests. Untouched purity, natural 7.6 pH, and essential cellular minerals.",
+    "Experience pure organic hydration with Fern Natural Mineral Water. Drawn from a pristine 230-foot deep virgin spring in Sri Lanka's Miocene-era rainforests. Untouched purity, natural 7.6 pH, and essential cellular minerals.",
   keywords: [
     "Fern water",
     "Fern bottled water",
@@ -31,19 +31,20 @@ export const metadata: Metadata = {
     "natural mineral water",
     "luxury bottled water",
     "alkaline water Sri Lanka",
-    "glass bottle water",
+    "Since 1992",
+    "Duallink International",
   ],
   authors: [{ name: "Duallink International Pvt Ltd" }],
   openGraph: {
     title: "Fern Bottled Water — Pure Nature in Every Drop",
     description:
-      "Drawn from a pristine 230-foot virgin spring in Sri Lanka's ancient rainforests. Experience 200 years of nature's purity.",
+      "Drawn from a pristine 230-foot virgin spring in Sri Lanka's ancient rainforests. Experience over 30 years of nature's purity.",
     images: [
       {
-        url: "/assets/fern_luxury_hero.jpg",
+        url: "/assets/fern_water_bottle_with-water.png",
         width: 1200,
         height: 900,
-        alt: "Fern Natural Mineral Water Bottle",
+        alt: "Fern Bottled Drinking Water",
       },
     ],
   },
@@ -59,7 +60,7 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${plusJakarta.variable} scroll-smooth`}
     >
-      <body className="font-sans bg-[#061a14] text-[#f1f5f9] antialiased selection:bg-[#10b981] selection:text-[#061a14] overflow-x-hidden">
+      <body className="font-sans bg-[#050b14] text-[#f1f5f9] antialiased selection:bg-[#00a3e0] selection:text-white overflow-x-hidden">
         {children}
       </body>
     </html>

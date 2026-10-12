@@ -18,7 +18,7 @@ import { MineralModal } from "@/components/MineralModal";
 export default function Home() {
   return (
     <CartProvider>
-      <div className="relative min-h-screen bg-[#061a14] text-[#f1f5f9] selection:bg-[#10b981] selection:text-[#061a14]">
+      <div className="relative min-h-screen bg-[#050b14] text-[#f1f5f9] selection:bg-[#00a3e0] selection:text-white">
         {/* Sticky Glassmorphic Header */}
         <Navbar />
 
@@ -35,7 +35,7 @@ export default function Home() {
           {/* Cellular Health & Bento Grid */}
           <HealthBenefits />
 
-          {/* Heritage Story (1818 to Present) */}
+          {/* Heritage Story (Since 1992) */}
           <OurStory />
 
           {/* Rainforest Conservation & Eco Commitments */}

@@ -14,8 +14,6 @@ import {
   MessageCircle,
   Truck,
   CheckCircle,
-  ArrowRight,
-  Sparkles,
 } from "lucide-react";
 
 export const OrderDrawer: React.FC = () => {
@@ -92,12 +90,12 @@ export const OrderDrawer: React.FC = () => {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", damping: 28, stiffness: 240 }}
-          className="relative w-full max-w-md bg-[#061a14] border-l border-emerald-500/30 h-full flex flex-col justify-between shadow-2xl z-10 overflow-hidden"
+          className="relative w-full max-w-md bg-[#050b14] border-l border-[#00a3e0]/30 h-full flex flex-col justify-between shadow-2xl z-10 overflow-hidden"
         >
           {/* Header */}
-          <div className="p-6 border-b border-white/10 flex items-center justify-between bg-black/20">
+          <div className="p-6 border-b border-white/10 flex items-center justify-between bg-black/30">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-300">
+              <div className="w-10 h-10 rounded-full bg-[#00a3e0]/20 border border-[#00a3e0]/40 flex items-center justify-center text-sky-200">
                 <ShoppingBag className="w-5 h-5" />
               </div>
               <div>
@@ -122,12 +120,12 @@ export const OrderDrawer: React.FC = () => {
           <div className="p-6 overflow-y-auto flex-1 space-y-4">
             {orderCompleted ? (
               <div className="py-12 text-center space-y-4">
-                <CheckCircle className="w-16 h-16 text-emerald-400 mx-auto animate-bounce" />
+                <CheckCircle className="w-16 h-16 text-[#00a3e0] mx-auto animate-bounce" />
                 <h4 className="font-serif text-2xl font-normal text-white">
                   Order Successfully Registered!
                 </h4>
                 <p className="text-xs text-slate-300 font-light max-w-xs mx-auto">
-                  Our dispatch logistics department in Kamburupitiya has received
+                  Our dispatch logistics department in Narandeniya, Kamburupitiya has received
                   your delivery schedule. We will contact your phone number to coordinate arrival.
                 </p>
               </div>
@@ -145,14 +143,14 @@ export const OrderDrawer: React.FC = () => {
 
                 {/* Quick Add Recommendations */}
                 <div className="pt-4 text-left">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#e6c875] block mb-3">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#e4007c] block mb-3">
                     Recommended Formats:
                   </span>
                   <div className="space-y-2">
                     {PRODUCTS.slice(0, 3).map((p) => (
                       <div
                         key={p.id}
-                        className="p-3 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between hover:border-emerald-500/30 transition"
+                        className="p-3 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between hover:border-[#00a3e0]/30 transition"
                       >
                         <div className="flex items-center gap-2.5">
                           <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0">
@@ -175,7 +173,7 @@ export const OrderDrawer: React.FC = () => {
 
                         <button
                           onClick={() => addItem(p)}
-                          className="px-3 py-1 rounded-lg text-xs font-bold text-[#061a14] bg-emerald-400 hover:bg-emerald-300 transition"
+                          className="px-3 py-1 rounded-lg text-xs font-bold text-white bg-brand-gradient hover:brightness-110 transition"
                         >
                           Add
                         </button>
@@ -204,7 +202,7 @@ export const OrderDrawer: React.FC = () => {
                       <h4 className="text-xs font-semibold text-white truncate">
                         {item.product.name}
                       </h4>
-                      <div className="text-[11px] text-emerald-400 font-mono">
+                      <div className="text-[11px] text-[#00a3e0] font-mono">
                         LKR {item.product.priceLKR.toLocaleString()} each
                       </div>
 
@@ -220,7 +218,7 @@ export const OrderDrawer: React.FC = () => {
                           {item.quantity}
                         </span>
                         <button
-                          onClick={() => addItem(item.product.id ? item.product : item.product)}
+                          onClick={() => addItem(item.product)}
                           className="p-1 rounded-md bg-white/10 hover:bg-white/20 text-slate-200 transition"
                         >
                           <Plus className="w-3 h-3" />
@@ -254,7 +252,7 @@ export const OrderDrawer: React.FC = () => {
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
                     placeholder="Recipient Full Name"
-                    className="w-full px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-emerald-400"
+                    className="w-full px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-[#00a3e0]"
                   />
                   <input
                     type="tel"
@@ -262,7 +260,7 @@ export const OrderDrawer: React.FC = () => {
                     value={customerPhone}
                     onChange={(e) => setCustomerPhone(e.target.value)}
                     placeholder="Delivery Contact Phone Number"
-                    className="w-full px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-emerald-400"
+                    className="w-full px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-[#00a3e0]"
                   />
                   <input
                     type="text"
@@ -270,7 +268,7 @@ export const OrderDrawer: React.FC = () => {
                     value={deliveryAddress}
                     onChange={(e) => setDeliveryAddress(e.target.value)}
                     placeholder="Delivery Address / City (e.g. Galle, Matara, Colombo)"
-                    className="w-full px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-emerald-400"
+                    className="w-full px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-[#00a3e0]"
                   />
                 </form>
               </div>
@@ -301,7 +299,7 @@ export const OrderDrawer: React.FC = () => {
               <button
                 type="button"
                 onClick={handleWebCheckout}
-                className="w-full py-3 rounded-full font-bold text-xs uppercase tracking-wider text-[#061a14] bg-gradient-to-r from-emerald-400 to-[#e6c875] hover:brightness-110 active:scale-95 transition flex items-center justify-center gap-2 shadow"
+                className="w-full py-3 rounded-full font-bold text-xs uppercase tracking-wider text-white bg-brand-gradient hover:brightness-110 active:scale-95 transition flex items-center justify-center gap-2 shadow border border-white/20"
               >
                 <Truck className="w-4 h-4" />
                 <span>Confirm Direct Delivery</span>

@@ -32,21 +32,24 @@ export const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Banner Notice */}
-      <div className="bg-[#030f0b] border-b border-white/5 py-1.5 px-4 text-xs text-slate-300 font-normal">
+      <div className="bg-[#020710] border-b border-white/5 py-1.5 px-4 text-xs text-slate-300 font-normal">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span className="hidden sm:inline text-emerald-400 font-semibold tracking-wide uppercase text-[10px]">
+            <span className="inline-block w-2 h-2 rounded-full bg-[#00a3e0] animate-ping" />
+            <span className="hidden sm:inline text-[#00a3e0] font-semibold tracking-wide uppercase text-[10px]">
               Bottled at Source:
             </span>
             <span>230-Foot Virgin Subterranean Spring • Kamburupitiya, Sri Lanka</span>
           </div>
           <div className="hidden md:flex items-center gap-6">
             <span className="text-slate-400">
-              Hotline: <a href="tel:+94715165165" className="text-emerald-300 hover:text-white transition">+94 715 165 165</a>
+              Hotline:{" "}
+              <a href="tel:+94715165165" className="text-sky-300 hover:text-white transition font-mono font-medium">
+                +94 715 165 165
+              </a>
             </span>
-            <span className="text-[#e6c875] flex items-center gap-1 font-medium">
-              <Sparkles className="w-3 h-3" /> Heritage Since 1818
+            <span className="text-[#e4007c] flex items-center gap-1 font-medium">
+              <Sparkles className="w-3 h-3" /> Since 1992
             </span>
           </div>
         </div>
@@ -56,28 +59,28 @@ export const Navbar: React.FC = () => {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "glass-nav py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-emerald-900/30"
+            ? "glass-nav py-3.5 shadow-[0_10px_35px_rgba(0,0,0,0.65)] border-[#00a3e0]/20"
             : "bg-transparent py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full p-1 bg-gradient-to-tr from-emerald-500/30 to-white/10 border border-emerald-500/30 backdrop-blur-md flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.25)]">
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full p-1 bg-gradient-to-tr from-[#00a3e0]/30 to-[#e4007c]/20 border border-[#00a3e0]/40 backdrop-blur-md flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-[0_0_20px_rgba(0,163,224,0.3)]">
               <Image
                 src="/assets/logo-transparent.png"
                 alt="Fern Bottled Water Logo"
-                width={40}
-                height={40}
+                width={42}
+                height={42}
                 className="w-full h-full object-contain filter drop-shadow"
                 priority
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-serif text-2xl tracking-[0.18em] font-bold text-white uppercase leading-none group-hover:text-emerald-300 transition-colors">
+              <span className="font-serif text-2xl tracking-[0.18em] font-bold text-white uppercase leading-none group-hover:text-sky-300 transition-colors">
                 FERN
               </span>
-              <span className="text-[9px] tracking-[0.3em] uppercase text-emerald-400 font-semibold mt-1">
+              <span className="text-[9px] tracking-[0.3em] uppercase text-[#00a3e0] font-semibold mt-1">
                 Natural Mineral Water
               </span>
             </div>
@@ -89,10 +92,10 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-slate-300 hover:text-emerald-300 transition-colors relative py-1 group"
+                className="text-sm font-medium text-slate-300 hover:text-sky-300 transition-colors relative py-1 group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-[#e6c875] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00a3e0] to-[#e4007c] transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -108,11 +111,11 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => setIsDrawerOpen(true)}
               aria-label="View Order Basket"
-              className="relative p-2.5 rounded-full bg-white/5 hover:bg-emerald-500/20 text-slate-200 hover:text-emerald-300 border border-white/10 hover:border-emerald-500/30 transition-all duration-300"
+              className="relative p-2.5 rounded-full bg-white/5 hover:bg-[#00a3e0]/20 text-slate-200 hover:text-sky-300 border border-white/10 hover:border-[#00a3e0]/40 transition-all duration-300"
             >
               <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-r from-emerald-500 to-emerald-400 text-[#061a14] font-bold text-[11px] rounded-full flex items-center justify-center animate-bounce shadow-md">
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#e4007c] text-white font-bold text-[11px] rounded-full flex items-center justify-center animate-bounce shadow-md">
                   {totalItems}
                 </span>
               )}
@@ -121,9 +124,9 @@ export const Navbar: React.FC = () => {
             {/* Order Fresh CTA */}
             <button
               onClick={() => setIsDrawerOpen(true)}
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-[#061a14] bg-gradient-to-r from-emerald-400 via-emerald-300 to-[#d4af37] hover:brightness-110 active:scale-95 shadow-[0_0_25px_rgba(16,185,129,0.4)] transition-all duration-300 border border-emerald-300/40"
+              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-brand-gradient hover:brightness-110 active:scale-95 shadow-[0_0_25px_rgba(0,163,224,0.4)] transition-all duration-300 border border-white/20"
             >
-              <Droplets className="w-3.5 h-3.5 fill-[#061a14]" />
+              <Droplets className="w-3.5 h-3.5 fill-white" />
               <span>Order Fresh</span>
             </button>
 
@@ -131,7 +134,7 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle navigation menu"
-              className="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-200 hover:text-emerald-400 transition"
+              className="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-200 hover:text-sky-300 transition"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -141,7 +144,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden flex flex-col bg-[#061a14]/98 backdrop-blur-2xl transition-all duration-300 p-6 animate-fadeIn">
+        <div className="fixed inset-0 z-50 lg:hidden flex flex-col bg-[#050b14]/98 backdrop-blur-2xl transition-all duration-300 p-6 animate-fadeIn">
           <div className="flex items-center justify-between border-b border-white/10 pb-5">
             <Link
               href="/"
@@ -177,10 +180,10 @@ export const Navbar: React.FC = () => {
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-xl font-serif text-slate-100 hover:text-emerald-400 py-2 border-b border-white/5 transition flex items-center justify-between"
+                className="text-xl font-serif text-slate-100 hover:text-sky-300 py-2 border-b border-white/5 transition flex items-center justify-between"
               >
                 <span>{link.label}</span>
-                <span className="text-emerald-500/50 text-sm">→</span>
+                <span className="text-[#00a3e0]/60 text-sm">→</span>
               </a>
             ))}
           </nav>
@@ -191,16 +194,16 @@ export const Navbar: React.FC = () => {
                 setMobileMenuOpen(false);
                 setIsDrawerOpen(true);
               }}
-              className="w-full py-3.5 rounded-full text-center font-bold text-sm tracking-wider uppercase text-[#061a14] bg-gradient-to-r from-emerald-400 to-[#d4af37] shadow-lg"
+              className="w-full py-3.5 rounded-full text-center font-bold text-sm tracking-wider uppercase text-white bg-brand-gradient shadow-lg"
             >
               Order Fresh Water
             </button>
 
             <a
               href="tel:+94715165165"
-              className="w-full py-3 rounded-full text-center text-xs font-semibold tracking-wider uppercase text-emerald-300 border border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-full text-center text-xs font-semibold tracking-wider uppercase text-sky-200 border border-[#00a3e0]/40 bg-[#00a3e0]/10 flex items-center justify-center gap-2"
             >
-              <PhoneCall className="w-4 h-4" />
+              <PhoneCall className="w-4 h-4 text-[#00a3e0]" />
               <span>Call Hotline: +94 715 165 165</span>
             </a>
           </div>

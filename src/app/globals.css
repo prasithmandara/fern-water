@@ -2,7 +2,7 @@
 
 @layer base {
   :root {
-    --background: #061a14;
+    --background: #050b14;
     --foreground: #f1f5f9;
   }
 }
@@ -16,20 +16,20 @@
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-/* Glassmorphism Styles */
+/* Glassmorphism Styles - Fern Water Brand Identity */
 .glass-nav {
-  background: rgba(6, 26, 20, 0.72);
+  background: rgba(5, 11, 20, 0.78);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 163, 224, 0.15);
 }
 
 .glass-card {
-  background: linear-gradient(135deg, rgba(11, 37, 29, 0.7) 0%, rgba(6, 26, 20, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(8, 20, 38, 0.75) 0%, rgba(5, 11, 20, 0.88) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(16, 185, 129, 0.15);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 163, 224, 0.18);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .glass-card-hover {
@@ -38,33 +38,55 @@
 
 .glass-card-hover:hover {
   transform: translateY(-4px);
-  border-color: rgba(16, 185, 129, 0.4);
-  box-shadow: 0 25px 50px -12px rgba(6, 26, 20, 0.7), 0 0 30px rgba(16, 185, 129, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  border-color: rgba(0, 163, 224, 0.45);
+  box-shadow: 0 25px 50px -12px rgba(0, 80, 140, 0.35), 0 0 30px rgba(0, 163, 224, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.glass-card-magenta-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(228, 0, 124, 0.45);
+  box-shadow: 0 25px 50px -12px rgba(180, 0, 90, 0.35), 0 0 30px rgba(228, 0, 124, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .glass-pill {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .glass-dropdown {
-  background: rgba(4, 18, 14, 0.92);
+  background: rgba(4, 10, 20, 0.94);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(0, 163, 224, 0.25);
 }
 
-/* Gradients */
-.text-gold-gradient {
-  background: linear-gradient(135deg, #fef08a 0%, #e6c875 50%, #ca8a04 100%);
+/* Brand Theme Gradients */
+/* 1. Master Brand Gradient (Cyan to Royal Blue to Signature Magenta) */
+.text-brand-gradient {
+  background: linear-gradient(135deg, #38bdf8 0%, #00a3e0 45%, #e4007c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-emerald-gradient {
-  background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #10b981 100%);
+/* 2. Spring Water Azure / Cyan Gradient */
+.text-cyan-gradient {
+  background: linear-gradient(135deg, #f0f9ff 0%, #38bdf8 50%, #00a3e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 3. Fern Signature Magenta / Pink Gradient */
+.text-magenta-gradient {
+  background: linear-gradient(135deg, #fce7f3 0%, #f472b6 50%, #e4007c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 4. Deep Royal Blue Gradient */
+.text-royal-gradient {
+  background: linear-gradient(135deg, #bfdbfe 0%, #60a5fa 50%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -75,13 +97,34 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Subtle Water Glow and Lightings */
-.glow-emerald {
-  box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.3);
+/* Button & Accent Gradients */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, #00a3e0 0%, #2563eb 50%, #e4007c 100%);
 }
 
-.glow-ambient {
-  background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.15) 0%, rgba(6, 26, 20, 0) 70%);
+.bg-cyan-magenta {
+  background: linear-gradient(135deg, #00a3e0 0%, #e4007c 100%);
+}
+
+.bg-magenta-cyan {
+  background: linear-gradient(135deg, #e4007c 0%, #00a3e0 100%);
+}
+
+/* Glow & Lighting Effects */
+.glow-cyan {
+  box-shadow: 0 0 50px -10px rgba(0, 163, 224, 0.35);
+}
+
+.glow-magenta {
+  box-shadow: 0 0 50px -10px rgba(228, 0, 124, 0.35);
+}
+
+.glow-ambient-aquifer {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 163, 224, 0.15) 0%, rgba(5, 11, 20, 0) 70%);
+}
+
+.glow-ambient-magenta {
+  background: radial-gradient(circle at 50% 50%, rgba(228, 0, 124, 0.12) 0%, rgba(5, 11, 20, 0) 70%);
 }
 
 /* Animations */
@@ -109,11 +152,11 @@
     opacity: 0.8;
   }
   50% {
-    transform: scale(1.15);
-    opacity: 0.2;
+    transform: scale(1.18);
+    opacity: 0.25;
   }
   100% {
-    transform: scale(1.35);
+    transform: scale(1.42);
     opacity: 0;
   }
 }
@@ -127,6 +170,17 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.05);
   }
 }
 
@@ -147,21 +201,25 @@
   animation: liquidFlow 15s ease infinite;
 }
 
-/* Custom Scrollbar */
+.animate-pulse-glow {
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+/* Custom Scrollbar - Oceanic Spring Palette */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #030f0b;
+  background: #020710;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0f382c;
+  background: #0b2545;
   border-radius: 4px;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(0, 163, 224, 0.25);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #10b981;
+  background: #00a3e0;
 }
