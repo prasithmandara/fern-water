@@ -165,9 +165,6 @@ export const ProductShowcase: React.FC = () => {
                       </div>
                       <div className="font-serif text-xl sm:text-2xl font-bold text-white">
                         LKR {product.priceLKR.toLocaleString()}{" "}
-                        <span className="text-xs font-sans font-normal text-slate-400">
-                          (~${product.priceUSD.toFixed(2)})
-                        </span>
                       </div>
                     </div>
 

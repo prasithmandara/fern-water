@@ -50,7 +50,7 @@ const LAYERS: LayerDetail[] = [
     geology: "Hermetically sealed subterranean reservoir trapped beneath impermeable granitic bedrock in Kamburupitiya.",
     filtrationEffect: "Under natural artesian hydrostatic pressure, shielded from modern environmental contaminants.",
     mineralContribution: "Natural alkaline bicarbonate buffering reaching a balanced 7.6 pH equilibrium.",
-    timeEstimate: "Decades of Natural Filtration",
+    timeEstimate: "Natural Filtration",
   },
 ];
 
@@ -100,24 +100,6 @@ export const SourceScrollytelling: React.FC = () => {
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#040a14]/85 via-transparent to-black/25" />
-
-                {/* Depth Badge Overlay */}
-                <div className="absolute top-4 left-4 glass-card px-4 py-2 rounded-xl border border-white/20">
-                  <div className="text-[10px] tracking-widest uppercase text-[#00a3e0] font-bold">
-                    Target Depth Strata
-                  </div>
-                  <div className="font-serif text-2xl font-bold text-white">
-                    {current.depth}
-                  </div>
-                </div>
-
-                {/* Artesian Pressure Badge */}
-                <div className="absolute bottom-4 right-4 glass-card px-4 py-2 rounded-xl border border-[#00a3e0]/40 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#00a3e0] animate-ping" />
-                  <span className="text-xs font-semibold text-sky-200">
-                    Naturally Pressurized Aquifer
-                  </span>
-                </div>
               </div>
             </div>
 

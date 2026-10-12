@@ -131,7 +131,7 @@ export const Hero: React.FC = () => {
           {/* Bottle PNG */}
           <div className="relative w-full max-w-[560px] flex items-center justify-center animate-float-slow">
             <Image
-              src="/assets/fern_water_bottle_with-water.png"
+              src="/assets/fern_hero.png"
               alt="Fern Bottled Drinking Water Pure Spring Splash"
               width={800}
               height={533}

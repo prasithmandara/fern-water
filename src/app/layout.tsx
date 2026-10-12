@@ -41,7 +41,7 @@ export const metadata: Metadata = {
       "Drawn from a pristine 230-foot virgin spring in Sri Lanka's ancient rainforests. Experience over 30 years of nature's purity.",
     images: [
       {
-        url: "/assets/fern_water_bottle_with-water.png",
+        url: "/assets/fern_.png",
         width: 1200,
         height: 900,
         alt: "Fern Bottled Drinking Water",

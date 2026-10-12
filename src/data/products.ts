@@ -59,8 +59,7 @@ export const PRODUCTS: Product[] = [
     category: "luxury-dining",
     volume: "500ml",
     priceLKR: 350,
-    priceUSD: 1.20,
-    image: "/assets/fern_glass_dining.jpg",
+    image: "/assets/fern_glass.jpg",
     badge: "Eco Fine Dining",
     description:
       "Handcrafted heavy-base frosted flint glass edition, created for Michelin-starred culinary tables, boutique resorts, and conscious living. 100% refillable and eternally recyclable.",
@@ -82,7 +81,6 @@ export const PRODUCTS: Product[] = [
     category: "everyday",
     volume: "500ml",
     priceLKR: 120,
-    priceUSD: 0.40,
     image: "/assets/fern_500ml_bottled_water.jpeg",
     badge: "Most Popular",
     description:
@@ -105,7 +103,6 @@ export const PRODUCTS: Product[] = [
     category: "everyday",
     volume: "1000ml (1L)",
     priceLKR: 200,
-    priceUSD: 0.65,
     image: "/assets/fern_1000ml_water_bottle.jpeg",
     badge: "Signature Choice",
     description:
@@ -128,8 +125,7 @@ export const PRODUCTS: Product[] = [
     category: "everyday",
     volume: "1500ml (1.5L)",
     priceLKR: 260,
-    priceUSD: 0.85,
-    image: "/assets/fern_water_bottle_with-water.png",
+    image: "/assets/fern_hero.png",
     badge: "High Capacity",
     description:
       "Maximum single-bottle volume for athletes, hikers, and families on day journeys. Abundant mineral-rich spring water to maintain athletic endurance and prevent dehydration fatigue.",
@@ -151,8 +147,7 @@ export const PRODUCTS: Product[] = [
     category: "bulk-office",
     volume: "5L",
     priceLKR: 650,
-    priceUSD: 2.10,
-    image: "/assets/fern_source_aquifer.jpg",
+    image: "/assets/fern_5l.png",
     badge: "Culinary Grade",
     description:
       "Elevate your kitchen and culinary brewing. Savor delicate Ceylon teas, specialty pour-over coffee, and gourmet broths with pure, non-chlorinated spring water.",
@@ -174,8 +169,7 @@ export const PRODUCTS: Product[] = [
     category: "bulk-office",
     volume: "18.5L",
     priceLKR: 1200,
-    priceUSD: 3.90,
-    image: "/assets/fern_luxury_hero.jpg",
+    image: "/assets/fern_luxury.png",
     badge: "Bulk Value",
     description:
       "Sustainable bulk hydration for executive boardrooms, embassies, luxury villas, and bustling family estates. Closed-loop returnable carboy system sanitized with ozonated pure spring water.",
@@ -197,8 +191,7 @@ export const PRODUCTS: Product[] = [
     category: "dispensers",
     volume: "Universal 18.5L / 9.5L",
     priceLKR: 38000,
-    priceUSD: 125.0,
-    image: "/assets/fern_source_aquifer.jpg",
+    image: "/assets/fern_aquifer.png",
     badge: "Hardware",
     description:
       "Ultra-quiet high-efficiency compressor cooling and instant hot-water heating. Delivers piping hot water (90°C) for teas and refreshing chilled water (6°C) on demand.",
